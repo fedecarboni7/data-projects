@@ -1,0 +1,6 @@
+services:
+  pdf_scanner:
+    build: .
+    volumes:
+      - .:/usr/src/app 
+    tty: true

@@ -1,0 +1,10 @@
+#libraries required for the extract text program
+PyPDF2==2.4.0
+PyMuPDF
+pyyaml == 6
+mysql-connector-python
+pandas == 1.5.0
+pyenchant
+pdftotext
+camelot-py[cv]
+pycryptodome

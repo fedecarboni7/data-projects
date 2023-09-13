@@ -1,0 +1,21 @@
+FROM python:3.11.0
+
+WORKDIR /usr/src/app
+
+COPY requirements.txt ./
+
+RUN apt update
+
+RUN apt install ghostscript -y
+
+RUN pip install --no-cache-dir -r requirements.txt
+
+RUN playwright install
+
+RUN playwright install-deps
+
+ENV PY_COLORS=1
+
+COPY . .
+
+#CMD sleep 5; python main.py

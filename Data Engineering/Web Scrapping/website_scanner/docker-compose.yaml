@@ -1,0 +1,28 @@
+services:
+  website_scanner:
+    build: .
+    restart: on-failure
+    volumes:
+      - .:/usr/src/app 
+    tty: true
+    depends_on: 
+      - selenium
+    networks:
+      - scanner_network
+
+  selenium:
+    image: selenium/standalone-chrome
+    hostname: chrome
+    volumes:
+      - ./downloads:/downloads
+    environment:
+      - START_XVFB=false
+      - SE_NODE_OVERRIDE_MAX_SESSIONS=true
+      - SE_NODE_MAX_SESSIONS=250
+      - SE_NODE_SESSION_TIMEOUT=1000 
+    networks:
+      - scanner_network
+
+networks:
+  scanner_network:
+    driver: bridge

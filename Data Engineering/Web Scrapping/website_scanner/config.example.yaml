@@ -1,0 +1,81 @@
+mysqldb:
+  host: host.com
+  port: 3306
+  user: user
+  password: password
+  database: database
+
+linkedin_spider:
+  selenium_url: http://chrome:4444/wd/hub
+  input_file_path: ./tests/assets/owners2.csv
+  output_file_path: ./tests/assets/result/results_searchs.csv
+  max_number_of_matches: 1
+  action: GET_CONTACT_INFO_BY_SEARCH
+  credentials:
+    - linkedin_login_username: vetted@gmail.com
+      linkedin_login_password: passw
+      proxy: http://104.144.252.20:3128
+      
+boolean_spider: # This spider doesn't have selenium support
+  - input_file_path: ./tests/assets/test_boolean.csv
+    output_file_path: ./tests/assets/result/test_boolean.csv
+    proxy: http://104.144.252.20:3128 # opcional
+    regex: 
+      - 'object and pass in our loaded YAM'
+      - 'objecto|manzana'
+      - 'obje..'
+  - input_file_path: ./tests/assets/test_boolean.csv
+    output_file_path: ./tests/assets/result/test_boolean.csv
+    proxy: http://198.20.180.218:3128 # opcional
+    regex: 
+      - 'object and pass in our loaded YAM'
+      - 'objecto|manzana'
+      - 'obje..'
+
+businessEntity_spider:
+  twocaptcha_key: xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  threads: 1
+  accuracy: false
+  selenium_url: http://chrome:4444/wd/hub
+  input_folder_path: ./tests/assets/bes_files
+  output_folder_path: ./tests/assets/bes_result
+
+fddGathering_spider:
+  twocaptcha_key: xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  fdd_path: ./downloads/
+  site: cards # docqnetal, securities, wdfi
+  
+franchisetimes_spider:
+  pass:pass
+
+e2VisaElegibility_spider:
+  selenium_url: http://chrome:4444/wd/hub
+  input_file_path: ./tests/assets/franchise_names.csv
+  output_file_path: ./tests/assets/results.csv
+  threads: 1
+  ifpg_credentials:
+    username: user
+    password: passw
+  fba_credentials :
+    username: user
+    password: passw
+
+restaurantbusinessonline_spider:
+  pass:pass
+
+entrepreneur_spider:
+  pass:pass
+
+companiesForSale_spider:
+  spider: 'nationalfranchisesales' 
+
+sba_spider:
+  pass:pass
+
+google_spider:
+  spider: Item2ContactsLinkedinProfileSpider # franchiseeContacts, chainStoreGuideLinkedinProfileSpider
+  twocaptcha_key: xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+chainStoreGuide_spider:
+  email: mriotano@gmail.com
+  password: n9fhaaCB2LN7CaJ

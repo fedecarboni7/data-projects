@@ -1,0 +1,22 @@
+FROM python:3.11.0
+
+WORKDIR /usr/src/app
+
+COPY . .
+
+RUN apt update
+RUN apt install python3-enchant -y
+RUN apt install build-essential libpoppler-cpp-dev pkg-config -y
+RUN apt install ghostscript python3-tk -y
+RUN apt-get install ffmpeg libsm6 libxext6 -y
+RUN apt-get install -y qpdf
+
+RUN pip install --no-cache-dir -r requirements.txt
+RUN ls .
+RUN python setup.py install
+
+ENV PY_COLORS=1
+
+
+
+#CMD pytest; python3 main.py -v
