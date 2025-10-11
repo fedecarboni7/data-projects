@@ -12,7 +12,7 @@ Este proyecto utiliza técnicas de visión por computadora y aprendizaje profund
 - Entrenamiento y evaluación de modelos con Keras y Python.
 - Ideal para aprender sobre IA aplicada a problemas reales y accesibilidad.
 
-### 2. Web Scrapping / Website Scanner
+### 2. Web Scraping / Website Scanner
 Herramienta para extraer datos del HTML de distintos sitios web, con soporte para login, navegadores headless (Selenium, Playwright) y spiders preconfigurados para sitios populares. Ideal para automatizar la recopilación de info pública.
 
 - Funciona con HTML y SSR.
