@@ -14,7 +14,7 @@ import pandas as pd
 import numpy as np
 import services.mysql_service as conn
 import yaml
-from PyPDF2 import PdfReader
+from pypdf import PdfReader
 from services.mysql_service import DatabasePool
 from yaml.loader import SafeLoader
 

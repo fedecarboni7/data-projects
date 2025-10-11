@@ -1,4 +1,4 @@
-from PyPDF2 import PdfFileReader
+from pypdf import PdfReader
 import os
 import glob
 import shutil
@@ -21,18 +21,18 @@ def find_regex(filepath, regex_list):
     regex_found = False
 
     try:
-        pdf = PdfFileReader(filepath)
+        pdf = PdfReader(filepath)
     except Exception as e:
         return f'Could not process PDF,Error Description:,{str(e)}'
 
-    while (not values or regex_found) and page_number < pdf.numPages:
+    while (not values or regex_found) and page_number < len(pdf.pages):
         page = pdf.pages[page_number]
 
         try:  # Intenta obtener el texto de la página
             page_text = page.extract_text().replace('\n', '')
         except Exception as e: # Si no se puede obtener el texto, se saltea la página
             pages_with_error += f" {page_number}"
-            if page_number == pdf.numPages - 1:
+            if page_number == len(pdf.pages) - 1:
                 return f'Could not process page(s):{pages_with_error},Error Description:,{str(e)}'
             page_number += 1
             continue

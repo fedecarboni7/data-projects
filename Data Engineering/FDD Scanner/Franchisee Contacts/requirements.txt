@@ -1,5 +1,5 @@
 #libraries required for the extract text program
-PyPDF2==2.4.0
+pypdf>=3.9.0
 PyMuPDF
 pyyaml == 6
 mysql-connector-python
