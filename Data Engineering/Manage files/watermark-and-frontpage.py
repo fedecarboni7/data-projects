@@ -3,7 +3,7 @@ import glob
 import time
 from pathlib import Path
 from configparser import ConfigParser
-from PyPDF2 import PdfReader, PdfWriter, PageObject
+from pypdf import PdfReader, PdfWriter, PageObject
 
 
 def define_file_name(filepath: Path) -> str:

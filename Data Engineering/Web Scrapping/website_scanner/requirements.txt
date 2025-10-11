@@ -11,4 +11,4 @@ lxml == 4.9.1
 mysql-connector-python
 pytest-playwright
 camelot-py[cv]
-PyPDF2<3.0
+pypdf>=3.9.0
