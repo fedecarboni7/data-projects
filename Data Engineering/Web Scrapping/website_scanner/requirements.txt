@@ -6,7 +6,7 @@ requests
 beautifulsoup4 == 4.11.1
 selenium == 4.5.0
 schema == 0.7.5
-lxml == 4.9.1
+lxml == 6.1.0
 2captcha-python
 mysql-connector-python
 pytest-playwright
